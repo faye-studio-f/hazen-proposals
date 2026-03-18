@@ -23,7 +23,6 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 #screen-home, #screen-editor, #screen-viewer, #screen-list { display:none; }
 #screen-home.active, #screen-editor.active, #screen-viewer.active, #screen-list.active { display:block; }
 
-/* ── HOME ── */
 #screen-home {
   min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: 60px 40px;
@@ -39,7 +38,6 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 .btn-ghost { background: transparent; color: var(--white); font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; padding: 16px 40px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; border-radius: 2px; transition: border-color .2s; }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
 
-/* ── LIST ── */
 .list-header { padding: 40px 60px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
 .list-header-left { display: flex; align-items: center; gap: 20px; }
 .back-btn { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 22px; line-height: 1; }
@@ -57,7 +55,6 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 .empty-state { text-align: center; padding: 100px 40px; color: var(--muted); }
 .empty-state h3 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; margin-bottom: 8px; color: var(--white); }
 
-/* ── EDITOR ── */
 #screen-editor { display: none; }
 #screen-editor.active { display: flex; height: 100vh; overflow: hidden; }
 .editor-panel { width: 400px; flex-shrink: 0; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; height: 100vh; }
@@ -105,25 +102,21 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 .preview-pane::-webkit-scrollbar { width: 6px; }
 .preview-pane::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 
-/* ── MODAL ── */
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; display: none; align-items: center; justify-content: center; }
 .modal-overlay.open { display: flex; }
 .modal-box { background: #111; border: 1px solid var(--border); border-radius: 6px; padding: 40px; max-width: 560px; width: 90%; }
 .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 2px; margin-bottom: 8px; }
 .modal-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
 .share-url-box { background: var(--black); border: 1px solid rgba(200,245,38,0.3); border-radius: 4px; padding: 14px 16px; font-size: 12px; color: #aaa; word-break: break-all; margin-bottom: 16px; line-height: 1.8; font-family: monospace; }
-.share-url-box span { color: var(--yellow); }
 .modal-btns { display: flex; gap: 10px; }
 .copy-btn { flex: 1; padding: 12px; background: var(--yellow); color: #000; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 2px; border: none; cursor: pointer; border-radius: 3px; }
 .close-btn-modal { padding: 12px 20px; background: transparent; border: 1px solid var(--border); color: #888; font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; border-radius: 3px; }
 .copy-confirm { font-size: 12px; color: var(--yellow); text-align: center; margin-top: 10px; height: 16px; }
 
-/* ── VIEWER ── */
 .viewer-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(5,5,5,0.95), transparent); }
 .viewer-agency { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; }
 .viewer-nav-right { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
 
-/* ── PROPOSAL SECTIONS ── */
 .p-cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 60px 64px; background: var(--black); position: relative; overflow: hidden; }
 .p-cover-glow { position: absolute; bottom: -20%; left: 50%; transform: translateX(-50%); width: 80%; height: 60%; background: radial-gradient(ellipse, rgba(200,245,38,0.05) 0%, transparent 65%); pointer-events: none; }
 .p-cover-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
@@ -215,22 +208,21 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 .loading-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; }
 .loading-dot { width: 6px; height: 6px; background: var(--yellow); border-radius: 50%; animation: pulse 1s ease-in-out infinite; }
-@keyframes pulse { 0%,100% { opacity:.2; transform:scale(0.8); } 50% { opacity:1; transform:scale(1.2); } }
+@keyframes pulse { 0%,100%{opacity:.2;transform:scale(0.8);}50%{opacity:1;transform:scale(1.2);} }
 .loading-text { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #444; }
 .not-found { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 40px; }
 .not-found h2 { font-family: 'Bebas Neue', sans-serif; font-size: 64px; letter-spacing: 2px; color: #222; margin-bottom: 16px; }
 .not-found p { color: #555; font-size: 14px; }
 @media (max-width: 900px) {
-  .about-grid, .invest-dels { grid-template-columns: 1fr; }
-  .phase-row { grid-template-columns: 1fr; gap: 20px; }
-  .p-sec, .p-cover { padding-left: 28px; padding-right: 28px; }
-  .viewer-nav { padding: 16px 28px; }
+  .about-grid,.invest-dels{grid-template-columns:1fr;}
+  .phase-row{grid-template-columns:1fr;gap:20px;}
+  .p-sec,.p-cover{padding-left:28px;padding-right:28px;}
+  .viewer-nav{padding:16px 28px;}
 }
 </style>
 </head>
 <body>
 
-<!-- HOME -->
 <div id="screen-home" class="active">
   <div class="home-agency">Proposal Platform</div>
   <div class="home-title">CREATE.<br><span>SHARE.</span><br>CLOSE.</div>
@@ -241,7 +233,6 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
   </div>
 </div>
 
-<!-- LIST -->
 <div id="screen-list">
   <div class="list-header">
     <div class="list-header-left">
@@ -253,7 +244,6 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
   <div id="proposals-grid" class="proposals-grid"></div>
 </div>
 
-<!-- EDITOR -->
 <div id="screen-editor">
   <div class="editor-panel">
     <div class="editor-topbar">
@@ -337,12 +327,9 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
       <div class="save-status" id="save-status"></div>
     </div>
   </div>
-  <div class="preview-pane" id="preview-pane">
-    <div style="padding:40px;text-align:center;color:#333;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:40px;">Live Preview</div>
-  </div>
+  <div class="preview-pane" id="preview-pane"></div>
 </div>
 
-<!-- VIEWER -->
 <div id="screen-viewer">
   <nav class="viewer-nav">
     <div class="viewer-agency" id="viewer-agency-name"></div>
@@ -351,11 +338,10 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
   <div id="viewer-content"></div>
 </div>
 
-<!-- SHARE MODAL -->
 <div class="modal-overlay" id="share-modal">
   <div class="modal-box">
     <div class="modal-title">PROPOSAL LIVE ✦</div>
-    <p class="modal-sub">Send this link to your client. They'll see a full-screen, beautifully designed proposal — no login, no app needed.</p>
+    <p class="modal-sub">Send this link to your client. They'll see a full-screen proposal — no login, no app needed.</p>
     <div class="share-url-box" id="share-url-display"></div>
     <div class="modal-btns">
       <button class="copy-btn" onclick="copyShareLink()">COPY LINK</button>
@@ -366,84 +352,71 @@ body { background: var(--black); color: var(--white); font-family: 'DM Sans', sa
 </div>
 
 <script>
-// ══════════════════════════════════════
-//  SUPABASE CONFIG
-// ══════════════════════════════════════
-const SUPABASE_URL = 'https://whrjhfvtkxhqjrpvaioz.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndocmpodnRreGhxanJwdmFpb3oiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc0MjI1NjI3MCwiZXhwIjoyMDU3ODMyMjcwfQ.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndocmpodnRreGhxanJwdmFpb3oiLCJyb2xlIjoiYW5vbiJ9';
+// ── SUPABASE ──
+const SURL = 'https://whrjhfvtkxhqjrpvaioz.supabase.co';
+const SKEY = 'sb_publishable_F-5EwMX5ZVBg7vHkrOut2w_LQC_O8xq';
 
 const db = {
   async save(id, data) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/proposals`, {
+    const r = await fetch(`${SURL}/rest/v1/proposals`, {
       method: 'POST',
       headers: {
-        'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'apikey': SKEY,
+        'Authorization': `Bearer ${SKEY}`,
         'Content-Type': 'application/json',
         'Prefer': 'resolution=merge-duplicates'
       },
       body: JSON.stringify({ id, data })
     });
-    if (!res.ok) throw new Error(await res.text());
+    if (!r.ok) { const t = await r.text(); throw new Error(t); }
     return id;
   },
   async get(id) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/proposals?id=eq.${id}&select=*`, {
-      headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+    const r = await fetch(`${SURL}/rest/v1/proposals?id=eq.${encodeURIComponent(id)}&select=data`, {
+      headers: { 'apikey': SKEY, 'Authorization': `Bearer ${SKEY}` }
     });
-    const rows = await res.json();
+    const rows = await r.json();
     return rows[0]?.data || null;
   },
   async getAll() {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/proposals?select=id,data,created_at&order=created_at.desc`, {
-      headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+    const r = await fetch(`${SURL}/rest/v1/proposals?select=id,data,created_at&order=created_at.desc`, {
+      headers: { 'apikey': SKEY, 'Authorization': `Bearer ${SKEY}` }
     });
-    return await res.json();
+    return await r.json();
   },
-  async delete(id) {
-    await fetch(`${SUPABASE_URL}/rest/v1/proposals?id=eq.${id}`, {
+  async del(id) {
+    await fetch(`${SURL}/rest/v1/proposals?id=eq.${encodeURIComponent(id)}`, {
       method: 'DELETE',
-      headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+      headers: { 'apikey': SKEY, 'Authorization': `Bearer ${SKEY}` }
     });
   }
 };
 
-// ══════════════════════════════════════
-//  STATE
-// ══════════════════════════════════════
+// ── STATE ──
 let currentId = null;
-const DEFAULT = () => ({
-  agencyName: '', agencyTagline: '', agencyWeb: '',
-  clientName: '', proposalDate: '', clientDesc: '',
-  commitmentText: '',
-  challenges: [], responsibilities: [], stories: [],
-  distribution: [], phases: [], projects: [], stats: [],
-  monthlyPrice: '', gstNote: '+ 10% GST',
-  deliverables: [], optionals: [], team: [], contacts: [],
-  createdAt: Date.now()
+const DEF = () => ({
+  agencyName:'', agencyTagline:'', agencyWeb:'',
+  clientName:'', proposalDate:'', clientDesc:'', commitmentText:'',
+  challenges:[], responsibilities:[], stories:[], distribution:[], phases:[],
+  projects:[], stats:[], monthlyPrice:'', gstNote:'+ 10% GST',
+  deliverables:[], optionals:[], team:[], contacts:[], createdAt: Date.now()
 });
-let D = DEFAULT();
+let D = DEF();
 
-// ══════════════════════════════════════
-//  ROUTING
-// ══════════════════════════════════════
+// ── SCREENS ──
 function showScreen(name) {
   document.querySelectorAll('[id^="screen-"]').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen-' + name).classList.add('active');
+  document.getElementById('screen-'+name).classList.add('active');
   if (name === 'list') loadList();
 }
 
 function newProposal() {
-  currentId = null;
-  D = DEFAULT();
-  populateFields();
-  renderLists();
-  renderPreview();
+  currentId = null; D = DEF();
+  populateFields(); renderLists(); renderPreview();
   showScreen('editor');
   switchETab('basics', document.querySelector('.etab'));
 }
 
-// Check for ?proposal=ID in URL on load
 async function init() {
   const pid = new URLSearchParams(window.location.search).get('proposal');
   if (pid) {
@@ -452,16 +425,14 @@ async function init() {
     try {
       const data = await db.get(pid);
       if (data) renderViewer(data);
-      else document.getElementById('viewer-content').innerHTML = '<div class="not-found"><h2>NOT FOUND</h2><p>This proposal link may have expired or been removed.</p></div>';
+      else document.getElementById('viewer-content').innerHTML = '<div class="not-found"><h2>NOT FOUND</h2><p>This proposal link may have been removed.</p></div>';
     } catch(e) {
-      document.getElementById('viewer-content').innerHTML = '<div class="not-found"><h2>ERROR</h2><p>Could not load proposal. Please try again.</p></div>';
+      document.getElementById('viewer-content').innerHTML = '<div class="not-found"><h2>ERROR</h2><p>' + e.message + '</p></div>';
     }
   }
 }
 
-// ══════════════════════════════════════
-//  LIST
-// ══════════════════════════════════════
+// ── LIST ──
 async function loadList() {
   const grid = document.getElementById('proposals-grid');
   grid.innerHTML = '<div style="padding:60px;text-align:center;color:#333;font-size:11px;letter-spacing:3px;text-transform:uppercase">Loading…</div>';
@@ -474,8 +445,8 @@ async function loadList() {
     grid.innerHTML = rows.map(({id, data}) => `
       <div class="prop-card">
         <div class="prop-card-tag">Proposal</div>
-        <div class="prop-card-client">${raw(data.clientName || 'Untitled')}</div>
-        <div class="prop-card-agency">By ${raw(data.agencyName || '—')} · ${raw(data.proposalDate || '—')}</div>
+        <div class="prop-card-client">${raw(data.clientName||'Untitled')}</div>
+        <div class="prop-card-agency">By ${raw(data.agencyName||'—')} · ${raw(data.proposalDate||'—')}</div>
         <div class="prop-card-actions">
           <button class="prop-card-btn" onclick="editProposal('${id}')">Edit</button>
           <button class="prop-card-btn share" onclick="openShareModal('${id}')">Share Link</button>
@@ -484,18 +455,15 @@ async function loadList() {
         </div>
       </div>`).join('');
   } catch(e) {
-    grid.innerHTML = '<div class="empty-state"><h3>Error loading proposals</h3><p>' + e.message + '</p></div>';
+    grid.innerHTML = '<div class="empty-state"><h3>Error</h3><p>' + e.message + '</p></div>';
   }
 }
 
 async function editProposal(id) {
   const data = await db.get(id);
   if (!data) return;
-  currentId = id;
-  D = { ...DEFAULT(), ...data };
-  populateFields();
-  renderLists();
-  renderPreview();
+  currentId = id; D = {...DEF(), ...data};
+  populateFields(); renderLists(); renderPreview();
   showScreen('editor');
   switchETab('basics', document.querySelector('.etab'));
 }
@@ -507,40 +475,33 @@ async function previewProposal(id) {
 
 async function delProposal(id) {
   if (!confirm('Delete this proposal?')) return;
-  await db.delete(id);
-  loadList();
+  await db.del(id); loadList();
 }
 
 function openShareModal(id) {
-  const url = window.location.href.split('?')[0] + '?proposal=' + id;
-  document.getElementById('share-url-display').innerHTML = url;
+  const url = window.location.origin + window.location.pathname + '?proposal=' + id;
+  document.getElementById('share-url-display').textContent = url;
   document.getElementById('share-modal').classList.add('open');
   document.getElementById('copy-confirm').textContent = '';
 }
 
-// ══════════════════════════════════════
-//  SAVE & SHARE
-// ══════════════════════════════════════
+// ── SAVE & SHARE ──
 async function saveAndShare() {
   readFields();
   const btn = document.getElementById('save-btn');
   const status = document.getElementById('save-status');
-  btn.disabled = true;
-  btn.textContent = 'SAVING…';
-  status.textContent = '';
+  btn.disabled = true; btn.textContent = 'SAVING…'; status.textContent = '';
   try {
     const id = currentId || ('prop_' + Date.now() + '_' + Math.random().toString(36).slice(2,6));
     currentId = id;
     await db.save(id, D);
-    btn.textContent = 'SAVE & GET SHARE LINK';
-    btn.disabled = false;
+    btn.textContent = 'SAVE & GET SHARE LINK'; btn.disabled = false;
     status.textContent = '✓ Saved successfully';
     setTimeout(() => status.textContent = '', 4000);
     openShareModal(id);
   } catch(e) {
-    btn.textContent = 'SAVE & GET SHARE LINK';
-    btn.disabled = false;
-    status.textContent = '✗ Save failed: ' + e.message;
+    btn.textContent = 'SAVE & GET SHARE LINK'; btn.disabled = false;
+    status.textContent = '✗ Error: ' + e.message;
   }
 }
 
@@ -549,176 +510,63 @@ function closeModal() { document.getElementById('share-modal').classList.remove(
 function copyShareLink() {
   const text = document.getElementById('share-url-display').textContent.trim();
   navigator.clipboard.writeText(text).then(() => {
-    document.getElementById('copy-confirm').textContent = '✓ Copied to clipboard';
+    document.getElementById('copy-confirm').textContent = '✓ Copied!';
     setTimeout(() => document.getElementById('copy-confirm').textContent = '', 3000);
   }).catch(() => {
-    document.getElementById('copy-confirm').textContent = 'Select the link above to copy it manually';
+    document.getElementById('copy-confirm').textContent = 'Select the link above to copy manually';
   });
 }
 
-// ══════════════════════════════════════
-//  EDITOR
-// ══════════════════════════════════════
+// ── EDITOR ──
 function switchETab(name, el) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.etab').forEach(t => t.classList.remove('active'));
-  document.getElementById('etab-' + name).classList.add('active');
+  document.getElementById('etab-'+name).classList.add('active');
   if (el) el.classList.add('active');
 }
 
 const FKEYS = ['agencyName','agencyTagline','agencyWeb','clientName','proposalDate','clientDesc','commitmentText','monthlyPrice','gstNote'];
 function readFields() { FKEYS.forEach(k => { const el = document.getElementById('f-'+k); if (el) D[k] = el.value; }); }
-function populateFields() { FKEYS.forEach(k => { const el = document.getElementById('f-'+k); if (el) el.value = D[k] || ''; }); updateLabel(); }
+function populateFields() { FKEYS.forEach(k => { const el = document.getElementById('f-'+k); if (el) el.value = D[k]||''; }); updateLabel(); }
 function liveUpdate() { readFields(); updateLabel(); renderPreview(); }
-function updateLabel() { document.getElementById('editor-client-label').textContent = D.clientName || 'New Proposal'; }
+function updateLabel() { document.getElementById('editor-client-label').textContent = D.clientName||'New Proposal'; }
 
-function addItem(key, tpl) {
-  D[key].push(typeof tpl === 'object' && tpl !== null ? {...tpl} : tpl);
-  renderLists(); renderPreview();
-}
+function addItem(key, tpl) { D[key].push(typeof tpl==='object'&&tpl!==null?{...tpl}:tpl); renderLists(); renderPreview(); }
 function removeItem(key, i) { D[key].splice(i,1); renderLists(); renderPreview(); }
-function addTag(pi, inputId) {
-  const el = document.getElementById(inputId);
-  if (el?.value.trim()) { D.projects[pi].deliverables.push(el.value.trim()); el.value=''; renderLists(); renderPreview(); }
-}
-function removeTag(pi, ti) { D.projects[pi].deliverables.splice(ti,1); renderLists(); renderPreview(); }
-function addPhaseItem(pi, inputId) {
-  const el = document.getElementById(inputId);
-  if (el?.value.trim()) { D.phases[pi].items.push(el.value.trim()); el.value=''; renderLists(); renderPreview(); }
-}
-function removePhaseItem(pi, ii) { D.phases[pi].items.splice(ii,1); renderLists(); renderPreview(); }
-function addOptItem(oi, inputId) {
-  const el = document.getElementById(inputId);
-  if (el?.value.trim()) { D.optionals[oi].items.push(el.value.trim()); el.value=''; renderLists(); renderPreview(); }
-}
-function removeOptItem(oi, ii) { D.optionals[oi].items.splice(ii,1); renderLists(); renderPreview(); }
+function addTag(pi,iid){const el=document.getElementById(iid);if(el?.value.trim()){D.projects[pi].deliverables.push(el.value.trim());el.value='';renderLists();renderPreview();}}
+function removeTag(pi,ti){D.projects[pi].deliverables.splice(ti,1);renderLists();renderPreview();}
+function addPhaseItem(pi,iid){const el=document.getElementById(iid);if(el?.value.trim()){D.phases[pi].items.push(el.value.trim());el.value='';renderLists();renderPreview();}}
+function removePhaseItem(pi,ii){D.phases[pi].items.splice(ii,1);renderLists();renderPreview();}
+function addOptItem(oi,iid){const el=document.getElementById(iid);if(el?.value.trim()){D.optionals[oi].items.push(el.value.trim());el.value='';renderLists();renderPreview();}}
+function removeOptItem(oi,ii){D.optionals[oi].items.splice(ii,1);renderLists();renderPreview();}
 
-window.addItem=addItem; window.removeItem=removeItem;
-window.addTag=addTag; window.removeTag=removeTag;
-window.addPhaseItem=addPhaseItem; window.removePhaseItem=removePhaseItem;
-window.addOptItem=addOptItem; window.removeOptItem=removeOptItem;
-window.editProposal=editProposal; window.previewProposal=previewProposal;
-window.delProposal=delProposal; window.openShareModal=openShareModal;
+window.addItem=addItem;window.removeItem=removeItem;
+window.addTag=addTag;window.removeTag=removeTag;
+window.addPhaseItem=addPhaseItem;window.removePhaseItem=removePhaseItem;
+window.addOptItem=addOptItem;window.removeOptItem=removeOptItem;
+window.editProposal=editProposal;window.previewProposal=previewProposal;
+window.delProposal=delProposal;window.openShareModal=openShareModal;
 
-function set(id, html) { const el = document.getElementById(id); if (el) el.innerHTML = html; }
+function set(id,html){const el=document.getElementById(id);if(el)el.innerHTML=html;}
 
 function renderLists() {
-  set('challenges-ed', D.challenges.map((c,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">Challenge ${i+1}</span><button class="rm-btn" onclick="removeItem('challenges',${i})">×</button></div>
-      <div class="fg" style="margin:0"><input value="${esc(c)}" oninput="D.challenges[${i}]=this.value;renderPreview()"></div>
-    </div>`).join(''));
-
-  set('responsibilities-ed', D.responsibilities.map((r,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">Item ${i+1}</span><button class="rm-btn" onclick="removeItem('responsibilities',${i})">×</button></div>
-      <div class="fg"><label>Bold Label</label><input value="${esc(r.label)}" oninput="D.responsibilities[${i}].label=this.value;renderPreview()"></div>
-      <div class="fg" style="margin:0"><label>Description</label><input value="${esc(r.text)}" oninput="D.responsibilities[${i}].text=this.value;renderPreview()"></div>
-    </div>`).join(''));
-
-  set('stories-ed', D.stories.map((s,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">Piece ${i+1}</span><button class="rm-btn" onclick="removeItem('stories',${i})">×</button></div>
-      <div class="two-col">
-        <div class="fg"><label>Number</label><input value="${esc(s.num)}" oninput="D.stories[${i}].num=this.value;renderPreview()"></div>
-        <div class="fg"><label>Title</label><input value="${esc(s.title)}" oninput="D.stories[${i}].title=this.value;renderPreview()"></div>
-      </div>
-      <div class="fg" style="margin:0"><label>Description</label><textarea oninput="D.stories[${i}].body=this.value;renderPreview()">${esc(s.body)}</textarea></div>
-    </div>`).join(''));
-
-  set('distribution-ed', D.distribution.map((ch,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">${esc(ch.title)||'Channel'}</span><button class="rm-btn" onclick="removeItem('distribution',${i})">×</button></div>
-      <div class="two-col">
-        <div class="fg"><label>Icon (2-3 letters)</label><input value="${esc(ch.icon)}" oninput="D.distribution[${i}].icon=this.value;renderPreview()"></div>
-        <div class="fg"><label>Name</label><input value="${esc(ch.title)}" oninput="D.distribution[${i}].title=this.value;renderPreview()"></div>
-      </div>
-      <div class="fg" style="margin:0"><label>Description</label><input value="${esc(ch.body)}" oninput="D.distribution[${i}].body=this.value;renderPreview()"></div>
-    </div>`).join(''));
-
-  set('phases-ed', D.phases.map((p,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">Phase ${i+1}</span><button class="rm-btn" onclick="removeItem('phases',${i})">×</button></div>
-      <div class="two-col">
-        <div class="fg"><label>Name</label><input value="${esc(p.name)}" oninput="D.phases[${i}].name=this.value;renderPreview()"></div>
-        <div class="fg"><label>Duration</label><input value="${esc(p.duration)}" oninput="D.phases[${i}].duration=this.value;renderPreview()"></div>
-      </div>
-      <div class="fg"><label>Items</label>
-        ${p.items.map((it,ii) => `<div style="display:flex;gap:6px;margin-bottom:5px"><input value="${esc(it)}" style="font-size:12px" oninput="D.phases[${i}].items[${ii}]=this.value;renderPreview()"><button class="rm-btn" onclick="removePhaseItem(${i},${ii})">×</button></div>`).join('')}
-        <div class="tag-add-row"><input id="pi-${i}" placeholder="Add item…"><button onclick="addPhaseItem(${i},'pi-${i}')">Add</button></div>
-      </div>
-    </div>`).join(''));
-
-  set('projects-ed', D.projects.map((p,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">${esc(p.title)||'Project'}</span><button class="rm-btn" onclick="removeItem('projects',${i})">×</button></div>
-      <div class="two-col">
-        <div class="fg"><label>Tag</label><input value="${esc(p.tag)}" oninput="D.projects[${i}].tag=this.value;renderPreview()"></div>
-        <div class="fg"><label>Client</label><input value="${esc(p.client)}" oninput="D.projects[${i}].client=this.value;renderPreview()"></div>
-      </div>
-      <div class="fg"><label>Title</label><input value="${esc(p.title)}" oninput="D.projects[${i}].title=this.value;renderPreview()"></div>
-      <div class="fg"><label>Description</label><textarea oninput="D.projects[${i}].desc=this.value;renderPreview()">${esc(p.desc)}</textarea></div>
-      <div class="fg" style="margin:0"><label>Deliverables</label>
-        <div class="tags-wrap">${p.deliverables.map((d,j)=>`<span class="tag-pill">${esc(d)}<button onclick="removeTag(${i},${j})">×</button></span>`).join('')}</div>
-        <div class="tag-add-row"><input id="dt-${i}" placeholder="Add deliverable…"><button onclick="addTag(${i},'dt-${i}')">Add</button></div>
-      </div>
-    </div>`).join(''));
-
-  set('stats-ed', D.stats.map((s,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">Stat ${i+1}</span><button class="rm-btn" onclick="removeItem('stats',${i})">×</button></div>
-      <div class="two-col" style="margin:0">
-        <div class="fg"><label>Number</label><input value="${esc(s.num)}" oninput="D.stats[${i}].num=this.value;renderPreview()"></div>
-        <div class="fg" style="margin:0"><label>Label</label><input value="${esc(s.label)}" oninput="D.stats[${i}].label=this.value;renderPreview()"></div>
-      </div>
-    </div>`).join(''));
-
-  set('deliverables-ed', D.deliverables.map((dv,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title" style="font-size:11px;color:#555">${esc(dv).slice(0,40)||'Deliverable'}</span><button class="rm-btn" onclick="removeItem('deliverables',${i})">×</button></div>
-      <div class="fg" style="margin:0"><input value="${esc(dv)}" oninput="D.deliverables[${i}]=this.value;renderPreview()"></div>
-    </div>`).join(''));
-
-  set('optionals-ed', D.optionals.map((o,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">${esc(o.title)||'Option'}</span><button class="rm-btn" onclick="removeItem('optionals',${i})">×</button></div>
-      <div class="two-col">
-        <div class="fg"><label>Price</label><input value="${esc(o.price)}" oninput="D.optionals[${i}].price=this.value;renderPreview()"></div>
-        <div class="fg"><label>Title</label><input value="${esc(o.title)}" oninput="D.optionals[${i}].title=this.value;renderPreview()"></div>
-      </div>
-      <div class="fg"><label>Description</label><textarea oninput="D.optionals[${i}].desc=this.value;renderPreview()">${esc(o.desc)}</textarea></div>
-      <div class="fg" style="margin:0"><label>Includes</label>
-        ${o.items.map((it,ii) => `<div style="display:flex;gap:6px;margin-bottom:5px"><input value="${esc(it)}" style="font-size:12px" oninput="D.optionals[${i}].items[${ii}]=this.value;renderPreview()"><button class="rm-btn" onclick="removeOptItem(${i},${ii})">×</button></div>`).join('')}
-        <div class="tag-add-row"><input id="oi-${i}" placeholder="Add item…"><button onclick="addOptItem(${i},'oi-${i}')">Add</button></div>
-      </div>
-    </div>`).join(''));
-
-  set('team-ed', D.team.map((t,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">${esc(t.name)||'Member'}</span><button class="rm-btn" onclick="removeItem('team',${i})">×</button></div>
-      <div class="two-col" style="margin:0">
-        <div class="fg"><label>Name</label><input value="${esc(t.name)}" oninput="D.team[${i}].name=this.value;renderPreview()"></div>
-        <div class="fg" style="margin:0"><label>Role</label><input value="${esc(t.role)}" oninput="D.team[${i}].role=this.value;renderPreview()"></div>
-      </div>
-    </div>`).join(''));
-
-  set('contacts-ed', D.contacts.map((c,i) => `
-    <div class="item-card">
-      <div class="item-card-head"><span class="item-card-title">${esc(c.name)||'Contact'}</span><button class="rm-btn" onclick="removeItem('contacts',${i})">×</button></div>
-      <div class="fg"><label>Name</label><input value="${esc(c.name)}" oninput="D.contacts[${i}].name=this.value;renderPreview()"></div>
-      <div class="two-col">
-        <div class="fg"><label>Role</label><input value="${esc(c.role)}" oninput="D.contacts[${i}].role=this.value;renderPreview()"></div>
-        <div class="fg" style="margin:0"><label>Email</label><input value="${esc(c.email)}" oninput="D.contacts[${i}].email=this.value;renderPreview()"></div>
-      </div>
-    </div>`).join(''));
+  set('challenges-ed', D.challenges.map((c,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">Challenge ${i+1}</span><button class="rm-btn" onclick="removeItem('challenges',${i})">×</button></div><div class="fg" style="margin:0"><input value="${esc(c)}" oninput="D.challenges[${i}]=this.value;renderPreview()"></div></div>`).join(''));
+  set('responsibilities-ed', D.responsibilities.map((r,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">Item ${i+1}</span><button class="rm-btn" onclick="removeItem('responsibilities',${i})">×</button></div><div class="fg"><label>Bold Label</label><input value="${esc(r.label)}" oninput="D.responsibilities[${i}].label=this.value;renderPreview()"></div><div class="fg" style="margin:0"><label>Description</label><input value="${esc(r.text)}" oninput="D.responsibilities[${i}].text=this.value;renderPreview()"></div></div>`).join(''));
+  set('stories-ed', D.stories.map((s,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">Piece ${i+1}</span><button class="rm-btn" onclick="removeItem('stories',${i})">×</button></div><div class="two-col"><div class="fg"><label>Number</label><input value="${esc(s.num)}" oninput="D.stories[${i}].num=this.value;renderPreview()"></div><div class="fg"><label>Title</label><input value="${esc(s.title)}" oninput="D.stories[${i}].title=this.value;renderPreview()"></div></div><div class="fg" style="margin:0"><label>Description</label><textarea oninput="D.stories[${i}].body=this.value;renderPreview()">${esc(s.body)}</textarea></div></div>`).join(''));
+  set('distribution-ed', D.distribution.map((ch,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">${esc(ch.title)||'Channel'}</span><button class="rm-btn" onclick="removeItem('distribution',${i})">×</button></div><div class="two-col"><div class="fg"><label>Icon</label><input value="${esc(ch.icon)}" oninput="D.distribution[${i}].icon=this.value;renderPreview()"></div><div class="fg"><label>Name</label><input value="${esc(ch.title)}" oninput="D.distribution[${i}].title=this.value;renderPreview()"></div></div><div class="fg" style="margin:0"><label>Description</label><input value="${esc(ch.body)}" oninput="D.distribution[${i}].body=this.value;renderPreview()"></div></div>`).join(''));
+  set('phases-ed', D.phases.map((p,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">Phase ${i+1}</span><button class="rm-btn" onclick="removeItem('phases',${i})">×</button></div><div class="two-col"><div class="fg"><label>Name</label><input value="${esc(p.name)}" oninput="D.phases[${i}].name=this.value;renderPreview()"></div><div class="fg"><label>Duration</label><input value="${esc(p.duration)}" oninput="D.phases[${i}].duration=this.value;renderPreview()"></div></div><div class="fg">${p.items.map((it,ii)=>`<div style="display:flex;gap:6px;margin-bottom:5px"><input value="${esc(it)}" style="font-size:12px" oninput="D.phases[${i}].items[${ii}]=this.value;renderPreview()"><button class="rm-btn" onclick="removePhaseItem(${i},${ii})">×</button></div>`).join('')}<div class="tag-add-row"><input id="pi-${i}" placeholder="Add item…"><button onclick="addPhaseItem(${i},'pi-${i}')">Add</button></div></div></div>`).join(''));
+  set('projects-ed', D.projects.map((p,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">${esc(p.title)||'Project'}</span><button class="rm-btn" onclick="removeItem('projects',${i})">×</button></div><div class="two-col"><div class="fg"><label>Tag</label><input value="${esc(p.tag)}" oninput="D.projects[${i}].tag=this.value;renderPreview()"></div><div class="fg"><label>Client</label><input value="${esc(p.client)}" oninput="D.projects[${i}].client=this.value;renderPreview()"></div></div><div class="fg"><label>Title</label><input value="${esc(p.title)}" oninput="D.projects[${i}].title=this.value;renderPreview()"></div><div class="fg"><label>Description</label><textarea oninput="D.projects[${i}].desc=this.value;renderPreview()">${esc(p.desc)}</textarea></div><div class="fg" style="margin:0"><label>Deliverables</label><div class="tags-wrap">${p.deliverables.map((d,j)=>`<span class="tag-pill">${esc(d)}<button onclick="removeTag(${i},${j})">×</button></span>`).join('')}</div><div class="tag-add-row"><input id="dt-${i}" placeholder="Add deliverable…"><button onclick="addTag(${i},'dt-${i}')">Add</button></div></div></div>`).join(''));
+  set('stats-ed', D.stats.map((s,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">Stat ${i+1}</span><button class="rm-btn" onclick="removeItem('stats',${i})">×</button></div><div class="two-col" style="margin:0"><div class="fg"><label>Number</label><input value="${esc(s.num)}" oninput="D.stats[${i}].num=this.value;renderPreview()"></div><div class="fg" style="margin:0"><label>Label</label><input value="${esc(s.label)}" oninput="D.stats[${i}].label=this.value;renderPreview()"></div></div></div>`).join(''));
+  set('deliverables-ed', D.deliverables.map((dv,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title" style="font-size:11px;color:#555">${esc(dv).slice(0,40)||'Deliverable'}</span><button class="rm-btn" onclick="removeItem('deliverables',${i})">×</button></div><div class="fg" style="margin:0"><input value="${esc(dv)}" oninput="D.deliverables[${i}]=this.value;renderPreview()"></div></div>`).join(''));
+  set('optionals-ed', D.optionals.map((o,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">${esc(o.title)||'Option'}</span><button class="rm-btn" onclick="removeItem('optionals',${i})">×</button></div><div class="two-col"><div class="fg"><label>Price</label><input value="${esc(o.price)}" oninput="D.optionals[${i}].price=this.value;renderPreview()"></div><div class="fg"><label>Title</label><input value="${esc(o.title)}" oninput="D.optionals[${i}].title=this.value;renderPreview()"></div></div><div class="fg"><label>Description</label><textarea oninput="D.optionals[${i}].desc=this.value;renderPreview()">${esc(o.desc)}</textarea></div><div class="fg" style="margin:0">${o.items.map((it,ii)=>`<div style="display:flex;gap:6px;margin-bottom:5px"><input value="${esc(it)}" style="font-size:12px" oninput="D.optionals[${i}].items[${ii}]=this.value;renderPreview()"><button class="rm-btn" onclick="removeOptItem(${i},${ii})">×</button></div>`).join('')}<div class="tag-add-row"><input id="oi-${i}" placeholder="Add item…"><button onclick="addOptItem(${i},'oi-${i}')">Add</button></div></div></div>`).join(''));
+  set('team-ed', D.team.map((t,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">${esc(t.name)||'Member'}</span><button class="rm-btn" onclick="removeItem('team',${i})">×</button></div><div class="two-col" style="margin:0"><div class="fg"><label>Name</label><input value="${esc(t.name)}" oninput="D.team[${i}].name=this.value;renderPreview()"></div><div class="fg" style="margin:0"><label>Role</label><input value="${esc(t.role)}" oninput="D.team[${i}].role=this.value;renderPreview()"></div></div></div>`).join(''));
+  set('contacts-ed', D.contacts.map((c,i)=>`<div class="item-card"><div class="item-card-head"><span class="item-card-title">${esc(c.name)||'Contact'}</span><button class="rm-btn" onclick="removeItem('contacts',${i})">×</button></div><div class="fg"><label>Name</label><input value="${esc(c.name)}" oninput="D.contacts[${i}].name=this.value;renderPreview()"></div><div class="two-col"><div class="fg"><label>Role</label><input value="${esc(c.role)}" oninput="D.contacts[${i}].role=this.value;renderPreview()"></div><div class="fg" style="margin:0"><label>Email</label><input value="${esc(c.email)}" oninput="D.contacts[${i}].email=this.value;renderPreview()"></div></div></div>`).join(''));
 }
 
-// ══════════════════════════════════════
-//  BUILD PROPOSAL HTML
-// ══════════════════════════════════════
+// ── BUILD HTML ──
 function buildHTML(d) {
-  const ini = n => (n||'').split(' ').map(w=>w[0]||'').join('').toUpperCase().slice(0,2)||'?';
-  const cols = n => `repeat(${Math.min(n,4)},1fr)`;
+  const ini=n=>(n||'').split(' ').map(w=>w[0]||'').join('').toUpperCase().slice(0,2)||'?';
+  const cols=n=>`repeat(${Math.min(n,4)},1fr)`;
   return `
     <div class="p-cover">
       <div class="p-cover-glow"></div>
@@ -739,7 +587,7 @@ function buildHTML(d) {
     ${d.stories.length?`<div class="p-sec dark fade-up"><div class="p-eyebrow">Story Engine</div><div class="p-head">Content<br>Pillars</div><div class="story-grid" style="grid-template-columns:${cols(d.stories.length)}">${d.stories.map(s=>`<div class="story-card" data-num="${esc(s.num)}"><div class="story-num">${raw(s.num)}</div><div class="story-title">${raw(s.title)}</div><div class="story-body">${raw(s.body)}</div></div>`).join('')}</div></div>`:''}
     ${d.distribution.length?`<div class="p-sec fade-up"><div class="p-eyebrow">Distribution</div><div class="p-head">How We Reach<br>Your Audience</div><div class="dist-grid" style="grid-template-columns:${cols(d.distribution.length)}">${d.distribution.map(ch=>`<div class="dist-card"><div class="dist-icon-label">${raw(ch.icon)}</div><div class="dist-title">${raw(ch.title)}</div><div class="dist-body">${raw(ch.body)}</div></div>`).join('')}</div></div>`:''}
     ${d.stats.length?`<div class="p-sec dark fade-up"><div class="p-eyebrow">Results</div><div class="p-head">Proven<br>Performance</div><div class="stats-row" style="grid-template-columns:${cols(d.stats.length)}">${d.stats.map(s=>`<div class="stat-block"><div class="stat-num">${raw(s.num)}</div><div class="stat-label">${raw(s.label)}</div></div>`).join('')}</div></div>`:''}
-    ${d.projects.length?`<div class="p-sec fade-up"><div class="p-eyebrow">Selected Work</div><div class="p-head">Relevant<br>Projects</div><div class="projects-grid" style="grid-template-columns:${cols(Math.min(d.projects.length,2))}">${d.projects.map(p=>`<div class="proj-card"><div class="proj-tag">${raw(p.tag)}</div><div class="proj-title">${raw(p.title)}</div><div class="proj-client">${raw(p.client)}</div><div class="proj-desc">${raw(p.desc)}</div><div class="proj-dels">${p.deliverables.map(d=>`<span class="proj-del">${raw(d)}</span>`).join('')}</div></div>`).join('')}</div></div>`:''}
+    ${d.projects.length?`<div class="p-sec fade-up"><div class="p-eyebrow">Selected Work</div><div class="p-head">Relevant<br>Projects</div><div class="projects-grid" style="grid-template-columns:${cols(Math.min(d.projects.length,2))}">${d.projects.map(p=>`<div class="proj-card"><div class="proj-tag">${raw(p.tag)}</div><div class="proj-title">${raw(p.title)}</div><div class="proj-client">${raw(p.client)}</div><div class="proj-desc">${raw(p.desc)}</div><div class="proj-dels">${p.deliverables.map(dv=>`<span class="proj-del">${raw(dv)}</span>`).join('')}</div></div>`).join('')}</div></div>`:''}
     ${d.phases.length?`<div class="p-sec dark fade-up"><div class="p-eyebrow">Roadmap</div><div class="p-head">How We<br>Get There</div><div class="roadmap-list">${d.phases.map(p=>`<div class="phase-row"><div><div class="phase-name">${raw(p.name)}</div><div class="phase-dur">${raw(p.duration)}</div></div><ul class="phase-items">${p.items.map(it=>`<li>${raw(it)}</li>`).join('')}</ul></div>`).join('')}</div></div>`:''}
     ${d.monthlyPrice?`<div class="p-sec fade-up"><div class="p-eyebrow">Investment</div><div class="p-head">Monthly<br>Retainer</div><div class="invest-block"><div class="invest-top"><div class="invest-price">${raw(d.monthlyPrice)}</div><div class="invest-info"><div class="per">Per Month</div><div class="gst">${raw(d.gstNote||'')}</div></div></div>${d.deliverables.length?`<div class="invest-dels">${d.deliverables.map(dv=>`<div class="invest-del">${raw(dv)}</div>`).join('')}</div>`:''}</div></div>`:''}
     ${d.optionals.length?`<div class="p-sec dark fade-up"><div class="p-eyebrow">Optional Expansions</div><div class="p-head">Add-On<br>Services</div><div class="opt-grid" style="grid-template-columns:${cols(Math.min(d.optionals.length,2))}">${d.optionals.map(o=>`<div class="opt-card"><div class="opt-price">${raw(o.price)}</div><div class="opt-gst">${raw(d.gstNote||'')}</div><div class="opt-title">${raw(o.title)}</div><div class="opt-desc">${raw(o.desc)}</div><ul class="opt-items">${o.items.map(it=>`<li>${raw(it)}</li>`).join('')}</ul></div>`).join('')}</div></div>`:''}
@@ -750,25 +598,25 @@ function buildHTML(d) {
 }
 
 function renderPreview() {
-  const pane = document.getElementById('preview-pane');
-  if (pane) pane.innerHTML = buildHTML(D);
+  const p = document.getElementById('preview-pane');
+  if (p) p.innerHTML = buildHTML(D);
 }
 
 function renderViewer(data) {
-  document.getElementById('viewer-agency-name').textContent = data.agencyName || '';
+  document.getElementById('viewer-agency-name').textContent = data.agencyName||'';
   document.getElementById('viewer-nav-right').textContent = `Proposal · ${data.proposalDate||''}`;
   document.getElementById('viewer-content').innerHTML = buildHTML(data);
   setTimeout(() => {
     const els = document.querySelectorAll('#screen-viewer .fade-up');
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.08 });
+      entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+    }, {threshold:0.08});
     els.forEach(el => obs.observe(el));
   }, 100);
 }
 
-function raw(s) { return String(s||''); }
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function raw(s){return String(s||'');}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 init();
 </script>
